@@ -1,0 +1,40 @@
+# Gradle
+.gradle/
+build/
+*/build/
+*/build/
+!gradle-wrapper.jar
+
+# Local configuration
+gradle.properties.local
+local.properties
+*.keystore
+*.jks
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+*.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build outputs
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+
+# Logs
+*.log
+
+# Coverage
+*.ec
+*.exec
+
+# Generated
+generated/

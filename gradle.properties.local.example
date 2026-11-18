@@ -1,0 +1,7 @@
+# Copy this file to gradle.properties.local and add your keys
+# This file is gitignored and safe for local keys
+
+# YouTube Data API v3 Key
+# Get yours at: https://console.cloud.google.com/apis/credentials
+# Enable: YouTube Data API v3
+youtubeApiKey=YOUR_YOUTUBE_API_KEY_HERE

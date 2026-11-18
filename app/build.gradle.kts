@@ -17,12 +17,20 @@ android {
         versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // BuildConfig field for YouTube API key (set via gradle.properties)
+        buildConfigField("String", "YOUTUBE_API_KEY", "\"${project.findProperty("youtubeApiKey") ?: \"\"}\"")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            shrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+        debug {
+            isMinifyEnabled = false
+            isShrinkResources = false
         }
     }
 
@@ -78,9 +86,10 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
-    // DataStore (Preferences)
+    // DataStore (Preferences) + Security Crypto
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("androidx.datastore:datastore-preferences-rxjava3:1.0.0")
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
 
     // Room Database
     implementation("androidx.room:room-runtime:2.6.1")
@@ -91,7 +100,7 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0")
     kapt("com.github.bumptech.glide:compiler:4.16.0")
 
-    // YouTube Player (WebView-based fallback)
+    // WebKit for YouTube WebView
     implementation("androidx.webkit:webkit:1.8.0")
 
     // Serialization
