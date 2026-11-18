@@ -19,7 +19,8 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         // BuildConfig field for YouTube API key (set via gradle.properties)
-        buildConfigField("String", "YOUTUBE_API_KEY", "\"${project.findProperty("youtubeApiKey") ?: \"\"}\"")
+        val youtubeApiKey = project.findProperty("youtubeApiKey") as String? ?: ""
+        buildConfigField("String", "YOUTUBE_API_KEY", "\"$youtubeApiKey\"")
     }
 
     buildTypes {
