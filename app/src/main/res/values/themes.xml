@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base theme for the app -->
+    <style name="Theme.PowerRangersTV" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/pr_dark_navy</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+
+    <!-- NoActionBar variant -->
+    <style name="Theme.PowerRangersTV.NoActionBar" parent="Theme.PowerRangersTV">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Splash theme -->
+    <style name="Theme.PowerRangersTV.Splash" parent="Theme.PowerRangersTV">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+</resources>
